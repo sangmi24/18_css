@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경관련스타일</title>
+    <style>
+    
+       body{
+           background-color: skyblue;
+       }
+       #div-bg{
+           background-color: white;
+           border : 30px solid blue;
+           padding: 20px;
+           width: 50%;
+           /* div 의 content의 가로길이는 부모 요소(body)의
+            50%로 지정하겠다 라는 뜻 */
+           box-sizing: border-box;
+           /* 가로길이를 border까지 포함해서 지정하겠다 라는 뜻 */
+       }
+       
+       .div-test{
+           margin : 30px;
+           border : 10px dashed;
+           padding: 20px;
+           background-color: yellow;
+       }
+
+       #div1{
+           background-clip: border-box; /*기본값*/
+           /*배경색이 border 부분까지 적용이 된 상태*/
+       }
+
+       #div2{
+           background-clip: padding-box;
+           /*배경색이 padding 부분까지 적용이 된 상태*/
+       }
+
+       #div3{
+           background-clip: content-box;
+           /*배경색이 content 부분까지 적용이 된 상태*/
+       }
+       
+       #bg-img{
+           border: 1px solid black;
+           width: 70%;
+           height: 800px;
+           
+           background-image: url("resources/image/bono.jpg");
+           background-repeat: repeat-y; /* 사진들이 세로로만 연이어서 반복됨*/ 
+           background-size: contain; 
+           /* contain 가로든 세로든 간에 둘중에 하나가 가득 찰 때까지 크기를 딱 맞춰줌*/
+           /* cover 가득차면 짤린다. */
+           background-position: 50% 50%;/* center center */
+           background-attachment: fixed; /*스크롤 이동이 있더라도 그 자리 그대로 고정*/
+       }
+
+
+
+    </style>
+
+
+</head>
+<body>
+    
+    <h1>배경 관련 스타일(background~)</h1>
+
+    <h3>background-color : 배경색을 지정할 때 사용</h3>
+    <div id="div-bg">  <!--div는 기본값이 투명색이다. -->
+        피가 따뜻한 따뜻한 풀이 속잎나고, 보라. 용기가 평화스러운 커다란 약동하다. 너의 피고 그것은 있는 노년에게서 설산에서 과실이 쓸쓸한 인간의 쓸쓸하랴? 얼마나 용기가 듣기만 사막이다. 있으며, 살 이 품고 영락과 철환하였는가? 자신과 찾아 이상 것이다. 안고, 아니더면, 사는가 많이 구할 작고 인간의 것이다. 눈에 무엇을 아니더면, 주는 부패뿐이다. 사랑의 못할 것이 과실이 바이며, 끓는 것이다. 그것은 곳이 들어 보라.
+
+        산야에 청춘의 맺어, 이상 피가 인간이 것이다. 위하여, 공자는 용감하고 그와 미묘한 그들의 사막이다. 새가 구할 석가는 그들에게 얼마나 행복스럽고 쓸쓸하랴? 오아이스도 것이 바이며, 것은 사막이다. 희망의 피어나기 풀이 열락의 같이, 어디 날카로우나 원대하고, 것이다. 이상, 우리의 새가 몸이 우는 때까지 고행을 무엇이 오직 끓는다. 굳세게 못하다 생생하며, 안고, 장식하는 실로 원질이 보이는 풀이 위하여서. 기쁘며, 공자는 커다란 대중을 날카로우나 갑 타오르고 있으며, 없는 아름다우냐? 광야에서 가치를 소리다.이것은 넣는 쓸쓸하랴? 낙원을 없는 풍부하게 과실이 열락의 있다. 무엇을 듣기만 현저하게 심장의 그들의 듣는다.
+    </div>
+
+    <hr>
+
+    <h3>backgroud-clip : 배경을 적용시키고자 하는 범위를 지정할 때 사용</h3>
+    <pre>
+        [ 표현법 ]
+
+        선택자 {
+            backgroud-clip : border-box/ padding-box / content-box;
+        }
+    </pre>
+    
+    <!-- div.div-test*3 -->
+    <div class="div-test" id="div1">
+        과실이 굳세게 만천하의 피다. 설레는 미묘한 시들어 그들의 그들은 불어 아니다. 넣는 아름답고 그것을 생생하며, 두손을 것이다. 같은 풀이 구하지 불러 목숨을 있다. 못할 가지에 공자는 이상의 군영과 끓는다. 남는 청춘의 창공에 길을 뭇 유소년에게서 이것이다. 끝까지 커다란 안고, 이상의 찬미를 같이, 고동을 지혜는 것이다. 새 그것은 청춘의 밝은 얼마나 끓는다. 예가 위하여 그들의 그들은 남는 생생하며, 창공에 청춘을 부패뿐이다. 두손을 대한 무엇이 투명하되 가진 아름다우냐? 피고, 위하여, 넣는 보라.
+    </div>
+    <div class="div-test" id="div2">
+        과실이 굳세게 만천하의 피다. 설레는 미묘한 시들어 그들의 그들은 불어 아니다. 넣는 아름답고 그것을 생생하며, 두손을 것이다. 같은 풀이 구하지 불러 목숨을 있다. 못할 가지에 공자는 이상의 군영과 끓는다. 남는 청춘의 창공에 길을 뭇 유소년에게서 이것이다. 끝까지 커다란 안고, 이상의 찬미를 같이, 고동을 지혜는 것이다. 새 그것은 청춘의 밝은 얼마나 끓는다. 예가 위하여 그들의 그들은 남는 생생하며, 창공에 청춘을 부패뿐이다. 두손을 대한 무엇이 투명하되 가진 아름다우냐? 피고, 위하여, 넣는 보라.
+    </div>
+    <div class="div-test" id="div3">
+        과실이 굳세게 만천하의 피다. 설레는 미묘한 시들어 그들의 그들은 불어 아니다. 넣는 아름답고 그것을 생생하며, 두손을 것이다. 같은 풀이 구하지 불러 목숨을 있다. 못할 가지에 공자는 이상의 군영과 끓는다. 남는 청춘의 창공에 길을 뭇 유소년에게서 이것이다. 끝까지 커다란 안고, 이상의 찬미를 같이, 고동을 지혜는 것이다. 새 그것은 청춘의 밝은 얼마나 끓는다. 예가 위하여 그들의 그들은 남는 생생하며, 창공에 청춘을 부패뿐이다. 두손을 대한 무엇이 투명하되 가진 아름다우냐? 피고, 위하여, 넣는 보라.
+    </div>
+
+     <hr>
+
+     <h3>배경 이미지 테스트</h3>
+     <pre>
+         [ 표현법 ]
+
+         선택지 {
+             background-image : url("이미지경로");
+             background-repeat : repeat(기본값) / repeat-x / repeat-y / no-repeat;
+             background-size : auto / contain / cover / 가로길이( px/% );
+             background-position : 좌 / 우 / 가운데중1  위/아래/가운데중1 또는 x좌표(px/%) y좌표(%);
+             background-attachment : scroll / fixed ; 
+         }
+     </pre>
+     <div id="bg-img"></div>
+
+
+</body>
+</html>
+
+
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
