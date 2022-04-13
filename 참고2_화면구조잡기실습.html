@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*1. 지금부터 지정하는 가로세로길이는 테두리까지 포함하는 길이임을 알려줌*/ 
+        div{
+            box-sizing: border-box;
+            border: 1px solid red;
+        }
+        /*2.전체를 감싸는 wrap*/
+        .wrap{
+            width: 1000px;
+            height: 800px;
+            margin: auto;
+        }
+        /*3. 크게 세가지 영역*/
+        .wrap>div{
+            width: 100%;
+        }
+        #header,#footer{
+            height: 20%;
+        }
+        #content{
+            height: 60%;
+        }
+        /*4.header, content 공통적인 부분*/
+        #header>div, #content>div{
+            height: 100%;
+            float: left;
+        }
+        /*5. 세부적인 영역*/
+        #header_1{
+            width: 30%;
+        }
+        #header_2{
+            width: 70%;
+        }
+        #content_1{
+          width: 15%;
+        }
+        #content_2{
+          width: 65%;
+        }
+        #content_3{
+          width: 20%;
+        }
+    </style>
+
+
+</head>
+<body>
+    <div class="wrap">
+        <div id="header">
+            <div id="header_1"></div>
+            <div id="header_2"></div>
+        </div>
+        <div id="content">
+            <div id="content_1"></div>
+            <div id="content_2"></div>
+            <div id="content_3"></div>
+        </div>
+        <div id="footer"></div>
+    </div>
+</body>
+</html>
