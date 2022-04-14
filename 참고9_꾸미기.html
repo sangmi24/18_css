@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>참고9_꾸미기</title>
+    
+    <style>
+     /*문명특급 컨셉 */
+     /*1. 전체화면틀 관련 스타일 --------------------------*/  
+      div{
+          box-sizing: border-box;
+          /* border: 1px solid red; /*가이드라인*/ 
+      }
+      .wrap{
+          width: 1000px;
+          height: 800px;
+          margin: auto; /*가운데정렬*/
+      }
+      /* 크게 네가지 영역 */
+       .wrap>div{ width: 100%; }
+
+       #header,#footer { height: 20%;}
+       #navigator { height: 5%; }
+       #content { height: 55%;}
+        
+       /* 각각의 상세 영역 */
+       #header>div, #content>div{
+           height: 100%;
+           float: left;
+       }
+       #header{
+         background-color: rgba(255, 37, 9, 0.3);
+       }
+       #header_1{ width: 20%;}
+       #header_2{ width: 65%;}
+       #header_3{ width: 15%;}
+       
+       #content_1{ width: 15%;}
+       #content_2{ width: 60%;}
+       #content_3{ width: 25%;}
+       /*-----------------------------------------------------------*/
+
+       /*2. 푸터바 관련 스타일-----------*/ 
+       /* footer - 크게 두가지 영역 */
+      #footer>div{  width: 100%; }
+
+      #footer_1{ height: 20%; background-color: rgba(255, 37, 9, 0.6);}
+      #footer_2{ height: 80%; background-color: rgba(255, 37, 9, 0.3)}  
+      
+      /* footer_2 상세 영역 */
+      #footer_2>p{  
+          width: 100%; 
+         /* border: 1px solid blue; */
+          margin: 0px;  
+          box-sizing: border-box;
+        /*
+           현재 p요소에 box-sizing: border-box; 가 잡혀있지 않아서
+           테두리가 튀어나온것
+        */
+         font-size: 12px;
+      }
+      #p1{ 
+          height: 80%; 
+          padding: 5px 15px;
+         }   
+      #p2{ 
+          height: 20%;
+          text-align: center; /*글씨 가운데 정렬*/
+         }
+
+      /*
+        p 태그의 특성 => 기본적으로 위, 아래에 margin 이 잡힘
+                        공통적으로 p태그에 margin : 0px 적용하면 됨
+      */
+
+      /* footer_1의 a 태그들 스타일 수정하기*/
+      #footer_1> a{
+          text-decoration: none;
+          color: brown;
+          font-size: 110%;
+          font-weight: 600;
+          margin: 15px;     
+          vertical-align: middle; /* 수직 구조에서 가운데로 오게끔 해주는 속성 */
+
+      }
+     /*-----------------------------------------------------------*/
+     /*3. 로그인폼 관련 스타일 -------------------------------------*/
+      /* 전체내용을 감싸는 div */
+      #login_form{
+          width: 100%;
+          height: 30%;
+      }
+      /* 2_1, 2_2 속성 지정 */
+      #login_form>* { width: 100%; }
+
+      /*2_1, 2_2 의 각각의 세로길이, 스타일 적용 */
+      #login_form_input{ height: 80%; }
+      #login_form_etc{ 
+          height: 20%; 
+          text-align: center;
+        }
+         /*a 태그에 대해서 가운데정렬 해줄려면 부모 요소에 설정해줘야 함*/
+         
+      /*3_1, 3_2 공통 속성 지정 */
+      #login_form_input > * {
+          float: left;
+          height: 100%;
+      }
+      /* 3_1, 3_2 각각의 가로길이, 스타일 적용 */
+      #login_input_id_pwd{ width: 65%;}
+      #login_input_btn{ width: 35%;}
+
+      /* 3_1의 자식인 input 태그들에 대한 스타일 적용 */
+      #login_input_id_pwd> input {
+        width: 100%;
+        height: 50%;
+        box-sizing: border-box;
+        border-color: rgba(255, 14, 21, 0.9);
+      }
+      /*3_2의 자식인 submit 버튼에 대한 스타일 적용 */
+      #login_input_btn>input{
+          width: 100%;
+          height: 100%;
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px;
+          background-color: rgba(255, 14, 21, 0.5);
+          border-color: rgba(255, 14, 21, 0.9);
+          color: brown;
+      }
+      #login_input_btn > input:hover {
+      background-color: red;
+      color: white;
+      cursor: pointer;
+     }
+      
+
+
+      /* 2_2의 자식인 a태그들에 대한 스타일 적용 */
+      #login_form_etc>a{
+          text-decoration: none;
+          color: rgba(255, 14, 21, 0.7);
+          margin: 10px;
+          font-size: 12px;
+          vertical-align: middle;
+          
+      }
+    /*-----------------------------------------------------------*/
+    /*4. 검색창 관련 스타일---------------------------------------*/
+    /*검색창 부모 기준점*/
+    #header_2{
+            position: relative; /* 가운데정렬 1단계 : 부모 기준점 잡기*/
+        }
+        /* search_form 에 대한 스타일 적용 */
+        #search_form{
+            width: 80%;
+            height: 20%;
+            margin: auto; /*가운데 정렬시 필요함! 수평 기준으로 가운데 정렬*/
+            position: absolute; /* 가운데정렬 2단계 : 옮기고자 하는 자식한테 position : absolute 주기*/
+            top: 0px;
+            bottom: 0px;
+            left: 0px;    /*가운데정렬 3단계 : 위치잡기 (사방에서 0px로 지정)*/
+            right: 0px;
+            border-style: groove;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            border-color: rgba(255, 14, 21, 0.9);
+        }
+
+       /* search_form 의 자식들의 공통적인 스타일 적용 */
+       #search_form>div{
+           float: left;
+           height: 100%;
+       } 
+
+       /* search_form 의 자식들의 각각 스타일 적용 */
+       #search_text{ width: 80% ; }
+       #search_btn{ width: 20% ; }
+       
+       #search_btn>input {
+           border: 1px solid red;
+           padding-left: 10px;
+           background-color: rgba(255, 14, 21, 0.5);
+           color: brown;
+       }
+
+       #search_btn> input:hover {
+        background-color: red;
+        color: white;
+         cursor: pointer;
+     }
+
+       /* 각각의 input 태그의 사이즈를 100%로 지정 */
+       #search_form input{ /*input은 후손*/
+           width: 100%;
+           height: 100%;
+       }
+     /*-----------------------------------------------------------*/
+     /*5. 메뉴바 관련 스타일--------------------------------------- */
+      /* #navi에 대한 스타일 적용 */
+      #navi{
+          /* border: 1px solid blue; */
+           list-style-type: none;
+           margin: 0px; 
+           /*
+              ul 요소도 기본적으로 위,아래에 margin 이 존재
+              ul 요소에 기본적으로 padding 또한 존재
+              padding : 0px 을 부여하여 모든 글자들이 왼쪽에 달라붙게 하기
+           */
+           padding: 0px;
+           height: 100%;
+       }
+       /* 메인메뉴에 대한 스타일 적용*/
+       #navi>li {
+          /* border: 1px solid green; */
+           float: left;
+           width: 15%;
+           height: 100%;
+           text-align: center;
+       }
+
+       /* 공통적인 메뉴 글씨에 대해서 스타일 적용 */
+       #navi a { /*a태그는 인라인 요소 */
+          /*  border: 1px solid blue; */
+           text-decoration: none;
+           color: red;
+           font-size: 13px;
+           font-weight: 900;
+           width: 100%;
+           height: 100%;
+           /*
+              인라인요소의 특징 : width, height 속성이 안먹힘
+              => a태그는 인라인요소니까 width, height 속성을 넣어주려면
+                 블럭요소로 바꿔줘야 힘 (display : block;)
+           */
+           display : block;
+           /*vertical-align: middle;->  블럭요소에서 먹히지 않는 속성 */
+           line-height: 35px;  
+           
+           /*
+              코드 통합 시 이슈 발생 : 연결이 미세하게 끊김!
+              해결방법 : a 태그 자체에 사이즈를 살짝 확대시켜주는 함수 (애니메이션 관련 스타일 transform)
+           */
+          transform: scale(1); /*1배 확대하겠다. */
+
+       }
+       #navi a:hover{
+           color: crimson;
+           font-size: 15px;
+       }
+       /* 서브메뉴에 대한 스타일 적용*/
+       #navi>li>ul{
+           list-style-type: none;
+           padding: 0px;
+           display: none; /*1단계) 일단은 서브메뉴를 숨겨둠 */
+       }
+       #navi>li>a:hover+ul {
+           display: block; /*2단계) 메인메뉴에 마우스 올렸을때 서브메뉴 보이기*/
+       }
+       #navi>li>ul:hover{
+           display: block; /*3단계) 마우스가 서브메뉴에 있을 때에도 서브메뉴 보이기가 유지되야 함*/
+       }
+
+       /* 서브메뉴 글씨 조절 */
+       #navi>li>ul a { font-size: 10px; }
+       #navi>li>ul a:hover{ font-size: 13px;} 
+
+
+    /*-----------------------------------------------------------*/
+    /*6. 이미지 관련 스타일 */
+        #header_1{
+            position: relative;
+        }
+        #logo{
+            border-radius: 50px;
+            border-style: inset;
+            margin: auto;
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            left: 0px;    
+            right: 0px;      
+        }
+        #content_2 div{
+            height: 70%;
+            width: 70%;
+            margin-top: 50px;
+            border-radius: 50px;
+    
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="wrap">
+       <div id="header">
+           <div id="header_1">
+               <a href="https://www.youtube.com/user/SBSTVJobs" target="_self">
+               <img src="https://yt3.ggpht.com/iMsi8vtdRPv4E_-yYglESw2BjIVzVS0Ni73h_pBIbvDHYZ_elJeyMHdtDyam7pHrtwqY5c_y1A=s88-c-k-c0x00ffffff-no-rj" id="logo"
+                         width="150px" height="150px">
+                </a>
+
+           </div>
+           <div id="header_2">
+                <form action="test.do" method="get" id="search_form">
+                    <div id="search_text">
+                        <input type="search" name="keyword">
+                    </div>
+                    <div id="search_btn">
+                        <input type="submit" value="검색">
+                    </div>
+                </form>
+           </div>
+           <div id="header_3"></div>
+       </div>
+       <div id="navigator"> <!--메뉴바를 보통 관례상 navigator 라고 부른다.--> 
+            <ul id="navi">
+                <li><a href="">Java</a></li>
+                <li><a href="">Oracle</a></li>
+                <li>
+                    <a href="">Front-end</a>
+                    <ul>
+                    <li><a href="">HTML</a></li>
+                    <li><a href="">CSS</a></li>
+                    <li><a href="">JavaScript</a></li>
+                    <li><a href="">jQuery</a></li>
+
+                    </ul>
+                </li>
+                <li>
+                    <a href="">Server</a>
+                    <ul>
+                    <li><a href="">JDBC</a></li>
+                    <li><a href="">Servlet</a></li>
+                    <li><a href="">JSP</a></li>
+                    <li><a href="">Ajax</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">Framework</a>
+                    <ul>
+                        <li><a href="">MyBatis</a></li>
+                        <li><a href="">Spring</a></li>
+                    </ul>
+                </li> 
+            </ul>
+       </div> 
+       <div id="content">
+           <div id="content_1"></div>
+           <div id="content_2">
+            
+            <div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/9dB9zw60Z2w" 
+                title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+                encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>   
+                  
+                      
+               
+            </div>
+           <div id="content_3">
+                <!-- 1. 전체내용을 감싸는 div -->
+                <div id="login_form">
+                    <!--2_1. 입력을 받는 input 요소들이 위치할 form 영역-->
+                    <form action="test.do" method="post" id="login_form_input">
+                        <!--3_1. 왼쪽 : 아이디와 비밀번호를 입력받을 text 영역 -->
+                        <div id="login_input_id_pwd">
+                            <input type="text" name="userId" placeholder="ID" required> <br>
+                            <input type="password" name="userPwd" placeholder="PASSWORD" required>   
+                        </div>
+                        <!--3_2. 오른쪽 : 로그인버튼이 위치할 button 영역 -->
+                        <div id="login_input_btn">
+                            <input type="submit" value="로그인">
+                        </div>
+                    </form>
+                    <!--2_2. 회원가입, ID/PWD 찾기 페이지 요청을 위한 a태그들이 들어갈 div 영역-->
+                    <div id="login_form_etc">
+                        <a href="">회원가입</a>
+                        <a href="">ID/PWD 찾기</a>
+                    </div>
+              </div> 
+           </div>
+       </div>
+
+       <div id="footer">
+        <div id="footer_1">
+            <a href="">이용약관</a>  |
+            <a href="">개인정보취급방침</a>  |
+            <a href="">인재채용</a>  |
+            <a href="">고객센터</a>
+         </div>
+         <div id="footer_2">
+             <p id="p1"> <!--p도 블럭요소라 영역 나누기 가능 -->
+                  강남지원 1관 : 서울특별시 강남구 테헤란로14길 6 남도빌딩 2F, 3F, 4F, 5F, 6F <br>
+                  강남지원 2관 : 서울특별시 강남구 테헤란로10길 9 그랑프리 빌딩 4F, 5F, 7F <br>
+                  강남지원 3관 : 서울특별시 강남구 테헤란로 130 호산빌딩 5F, 6F  <br>
+                  종로지원 : 서울특별시 중구 남대문로 120 대일빌딩 2F, 3F  <br>
+                  당산지원 : 서울특별시 영등포구 선유동2로 57 이레빌딩 (구관) 19F, 20F
+             </p>
+             <p id="p2">
+                  Copyright © 1998-2022 KH Information Educational Institute All Right Reserved
+             </p>
+         </div>
+       </div>
+
+    </div>
+
+
+</body>
+</html>
