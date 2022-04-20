@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포트폴리오</title>
+    <style>
+        fieldset{
+           background-color:  skyblue;
+       }
+       legend{
+           border: 3px solid blue;
+           background-color: skyblue;
+           color: blue;      
+           font-size: larger;           
+       }
+       button{
+           background-color: rgb(61, 166, 198);
+       }    
+      #sub{
+           background-color: rgb(61, 166, 198);
+
+      }
+
+       th{
+           background-color: rgb(0, 191, 255);
+           font-size: larger;  
+           
+       }
+       td{
+            background-color: rgba(163, 242, 246, 0.76);
+       }
+       #text{
+           background-color: rgb(241, 241, 140);
+       }
+       table{
+           width: 700px;
+           height: 100px;
+       }
+       #link{
+           width: 11%;
+       }
+       #num{
+           width: 10%;
+       }
+       button:hover{
+           background: blue;
+       }
+       button {
+          cursor: pointer;
+       }
+       #sub {
+          cursor: pointer;
+       }
+       #sub:hover{
+         background: blue;
+       }
+       #link{text-decoration: none;}
+
+       
+       
+
+   </style>
+</head>
+<body>
+  
+    <form action="insert.no" method="post">
+        <fieldset>
+          <legend><b>공지사항 작성하기</b></legend> 
+            <b>제목<b> <input type="text" name="title" size="30" placeholder="제목을 입력하세요" id="text"> <br><br>
+            <b>내용<b> <textarea name="content" cols="100" rows="10" style="resize:none" 
+                         placeholder="내용을 입력하세요" id="text"></textarea>
+                 <br><br>   
+            첨부파일 <button name="uploadFile">파일선택</button>  선택된 파일 없음  <br> <br>
+            
+            <input type="submit" value="작성하기" id="sub">
+        </fieldset>        
+    </form>
+   
+    <hr> <br><br>
+    
+    <!--7행 6행-->
+    <table border="1">
+        <tr>
+            <th width="40" height="20">번호</th>
+            <th width="300" colspan="2">제목</th>
+            <th width="90">작성자</th>
+            <th width="90">작성일</th>
+            <th width="50" id="num">조회수</th>
+        </tr> 
+        <tr>
+            <td height="30">9</td>
+            <td >공지사항 제목 9</td>
+            <td><a href="" >바로가기</td>
+            <!--<td id="link" ><button name="link">바로가기</td>-->
+            <td>user01</td>
+            <td>2021-03-29</td>
+            <td>34</td>
+        </tr>
+        <tr>
+            <td height="30">6</td>
+            <td>공지사항 제목 6</td>
+            <td><button name="link">바로가기</td>
+            <td>answ445</td>
+            <td>2021-03-12</td>
+            <td>67</td>
+        </tr>
+        <tr>
+            <td height="30">3</td>
+            <td>공지사항 제목 3</td>
+            <td><button name="link">바로가기</td>
+            <td>testg12</td>
+            <td>2021-03-01</td>
+            <td>98</td>
+        </tr>
+        <tr>
+            <td height="30">2</td>
+            <td>공지사항 제목 2</td>
+            <td><button name="link">바로가기</td>
+            <td>palwe3</td>
+            <td>2021-01-02</td>
+            <td>85</td>
+        </tr>
+        <tr>
+            <td height="30">1</td>
+            <td>공지사항 제목 1</td>
+            <td><button name="link">바로가기</td>
+            <td>xml23</td>
+            <td>2020-12-24</td>
+            <td>124</td>
+        </tr>
+        <tr>
+            <th height="30" colspan="4">전체공지사항 갯수</th>
+           
+            <th colspan="2">5개</th>
+           
+        </tr>
+
+
+
+
+
+    </table>
+       
+    
+</body>
+</html>
